@@ -1,0 +1,43 @@
+.favoritos-container {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+.favoritos-container h1 {
+  color: #fff;
+  text-align: center;
+}
+
+.favoritos-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.favoritos-container ul li {
+  list-style: none;
+  color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 5px;
+}
+.favoritos-container span {
+  width: 100%;
+  max-width: 250px;
+  min-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.favoritos-container a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -1,0 +1,23 @@
+.search-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.search-logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search h1 {
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .search h1 {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+}
