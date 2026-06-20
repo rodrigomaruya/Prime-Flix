@@ -57,14 +57,14 @@ function Home() {
               <Link to={`/filme/${movie.id}`} className="link">
                 Acessar
               </Link>
-              <Link
+              {/* <Link
                 to={`https://embedplayapi.top/embed/${movie.id}`}
                 className="link"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Assistir
-              </Link>
+              </Link> */}
             </article>
           );
         })}
