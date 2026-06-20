@@ -15,13 +15,14 @@ interface FilmesProps {
 function Home() {
   const [movies, setMovies] = useState<FilmesProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
   useEffect(() => {
     async function getMovies() {
       const response = await api.get("movie/now_playing", {
         params: {
-          api_key: "8229b559098c57c11c99480f5e664170",
+          api_key: import.meta.env.VITE_API_KEY,
           language: "pt-BR",
-          page: 1,
+          page: page,
         },
       });
       setMovies(response.data.results);
@@ -32,7 +33,7 @@ function Home() {
     return () => {
       console.log("componente desmontado");
     };
-  }, []);
+  }, [page]);
 
   if (loading) {
     return (
@@ -56,11 +57,28 @@ function Home() {
               <Link to={`/filme/${movie.id}`} className="link">
                 Acessar
               </Link>
+              <Link
+                to={`https://embedplayapi.top/embed/${movie.id}`}
+                className="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Assistir
+              </Link>
             </article>
           );
         })}
       </div>
       <ImageTopo />
+      <div className="button-container">
+        <button onClick={() => setPage((prev) => Math.max(prev - 1, 1))}>
+          Anterior
+        </button>
+
+        <span className="button-span">Página {page}</span>
+
+        <button onClick={() => setPage((prev) => prev + 1)}>Próxima</button>
+      </div>
     </div>
   );
 }

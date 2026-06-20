@@ -23,7 +23,7 @@ function Filme() {
       await api
         .get(`movie/${id}`, {
           params: {
-            api_key: "8229b559098c57c11c99480f5e664170",
+            api_key: import.meta.env.VITE_API_KEY,
             language: "pt-BR",
           },
         })
@@ -56,7 +56,7 @@ function Filme() {
       const myList = localStorage.getItem("@primeflix");
       const myListMovies: FilmesProps[] = myList ? JSON.parse(myList) : [];
       const hasMovie = myListMovies.some(
-        (filmesSalvos) => filmesSalvos.id === detail?.id
+        (filmesSalvos) => filmesSalvos.id === detail?.id,
       );
       if (hasMovie) {
         toast.warning("Esse filme já foi salvo");

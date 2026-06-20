@@ -17,7 +17,7 @@ export function Search() {
     async function getSearch() {
       const result = await api(`/search/movie?query=${search}`, {
         params: {
-          api_key: "8229b559098c57c11c99480f5e664170",
+          api_key: import.meta.env.VITE_API_KEY,
           language: "pt-BR",
           query: search,
         },
