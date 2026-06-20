@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Prime Video 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web que faz requisições à API do TMDB para exibir informações sobre filmes. O projeto foi desenvolvido utilizando React com TypeScript e é parte do curso Fullstack Frontend do Matheus Fraga.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Exibição de uma lista de filmes populares.
 
-## Expanding the ESLint configuration
+- Barra de pesquisar filmes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Integração com a API do TMDB para buscar dados de filmes.
 
-- Configure the top-level `parserOptions` property like this:
+- Interface amigável,responsiva e fácil de navegar.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Navegação entre páginas utilizando o React Router DOM:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Página inicial com lista de filmes.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Página de detalhes para exibir informações mais detalhadas sobre um filme selecionado
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Tecnologias Utilizadas
+
+- React (Biblioteca para construção de interfaces de usuário)
+
+- TypeScript (Superset do JavaScript que adiciona tipagem estática)
+
+- React-Router-Dom (Para gerenciar a navegação entre páginas)
+
+- Axios ou fetch (Para realizar requisições à API do TMDB)
+
+- Styled Components ou CSS (Para estilização)
+
+- Vite  (Para a criação e configuração inicial do projeto)
